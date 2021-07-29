@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+:root {
+  --background-color-white: white;
+  --background-color-main: rgba(255, 255, 255, 0.466);
+  --background-color-dark: black;
+  --full-width: 100%;
+  --full-width-aside: 15%;
+  --full-width-main: calc(100% - var(--full-width-aside));
+  --full-width-bar-menu: 100%;
+}
+
+body {
+  background-color: var(--background-color-white);
+}
+
+.content-portafolio {
+  display: flex;
+}
+
+/*Aside*/
+.content-portafolio aside {
+  width: var(--full-width-aside);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  background-color: white /*#a5a5a5*/;
+  overflow: hidden;
+  transition: all 0.8s;
+}
+
+.content-portafolio .option-portafolio {
+  width: var(--full-width);
+}
+
+.content-portafolio ul {
+  list-style: none;
+  text-align: center;
+}
+
+.content-portafolio ul li {
+  margin: 10px 0;
+}
+
+.content-portafolio ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+/*Bar menu*/
+.bar-menu {
+  background-color: white /*rgb(217, 217, 217)*/;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: fixed;
+  width: var(--full-width-bar-menu);
+  z-index: 999;
+}
+
+/*Botón hamburger*/
+.btn-menu {
+  cursor: pointer;
+}
+
+.btn-menu div {
+  content: "";
+  width: 28px;
+  height: 4px;
+  margin: 2px 0;
+  border-radius: 2px;
+  background-color: black;
+}
+
+.cross-btn div {
+  position: absolute;
+  margin: 0;
+}
+
+.content-btn-menu {
+  padding-right: 20px;
+}
+
+#check {
+  display: none;
+}
+
+.btn-menu #check:checked ~ .cross-btn {
+  display: unset;
+}
+
+.btn-menu #check:checked ~ .cross-btn div:nth-child(1) {
+  transform: rotate(45deg);
+  transition: all 0.2s;
+}
+
+.btn-menu #check:checked ~ .cross-btn div:nth-child(2) {
+  transform: rotate(-45deg);
+  transition: all 0.2s;
+}
+.btn-menu #check:checked ~ div {
+  background-color: transparent;
+}
+
+/*Main*/
+
+.content-portafolio main {
+  width: var(--full-width-main);
+  margin-left: var(--full-width-aside);
+  transition: all 0.8s;
+}
+
+.content-portafolio .home {
+  margin-top: 47px;
+  text-align-last: center;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
+}
+
+.social-media img {
+  width: 25px;
+  background-color: rgba(128, 128, 128, 0.349);
+  padding: 15px;
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+.content-img-poratfolio {
+  padding: 50px 0;
+}
+
+.img-portafolio {
+  border-radius: 50%;
+  width: 236px;
+  height: 247px;
+  box-shadow: 0px 5px 50px 1px rgba(7, 7, 7, 0.2);
+  border: 3px solid white;
+}
+
+.portada {
+  z-index: -1;
+  content: "";
+  height: 200px;
+  position: absolute;
+  background-image: url("./img/portada.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: transparent;
+  width: var(--full-width-main);
+  box-shadow: 0px 5px 10px 1px rgba(7, 7, 7, 0.2);
+}
+
+.divisor {
+  content: "";
+  background: #7a7a7a;
+  height: 2px;
+  margin: 25px auto;
+  width: 40px;
+}
+
+.btn-cv {
+  background-color: rgb(254, 201, 7);
+}
+
+/*========================================== about =======================================*/
+.about {
+  display: flex;
+  padding: 50px 25px;
+}
+
+.about-me {
+  content: "";
+  width: 100%;
+  height: 300px;
+  background-image: url("./img/about_me.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.about-description p {
+  line-height: 35px;
+}
+
+h3,
+.about-description {
+  text-align: center;
+}
+
+.about-description {
+  width: 100%;
+  padding: 0 15px;
+}
+
+.progress-bar {
+  margin: auto;
+}
+
+.progress-bar,
+.progress-bar div {
+  content: "";
+  width: 250px;
+  height: 8px;
+  background-color: rgba(254, 200, 7, 0.349);
+  border-radius: 15px;
+}
+.progress-bar div::after {
+  content: "";
+  background-color: rgb(254, 201, 7);
+  width: 85%;
+  transition: width 5s;
+}
+/*==========================================*/
+.card {
+  text-align-last: center;
+  margin: 0 15px;
+}
+.card p {
+  text-align: center;
+}
+.card img {
+  width: 100px;
+  margin: 15px 0;
+}
+.services {
+  padding: 50px 0;
+}
+
+.card-services {
+  display: grid;
+  gap: 1rem;
+  grid-auto-rows: auto;
+  /*la propiedad <<auto-fit>> lo que hace es expandir las columnas para llenar todas las filas en 
+  cambio el   <<auto-fit>> lo que hace es llenar las columnas aunque esto este vacio; se es notorio 
+  con pocos elementos */
+  /*La funcion <<repeat()>> lo que hace es multiplicar según el primer parametro tantas veces como 
+  sea posible (en nuestro caso no es un numero constante e un numero auromatico <<auto-fill>> )*/
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+}
+
+.contact {
+  padding: 25px 0;
+}
+
+.contact form {
+  color: white;
+}
+
+.form-contact {
+  width: 60%;
+  background-color: gray;
+  margin: 25px auto;
+  padding: 45px;
+}
+
+.form-contact input,
+.form-contact textarea {
+  display: block;
+  resize: none;
+}
+
+.form-contact input[type="text"],
+.form-contact input[type="email"],
+.form-contact textarea {
+  margin: 5px 0;
+  border: 0;
+  width: 100%;
+  padding: 5px;
+}
+
+.form-contact input[type="submit"] {
+  margin: auto;
+  margin-top: 25px;
+  padding: 5px;
+  width: 30%;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  /* Sobre escribo el valor de las variables*/
+  :root {
+    --background-color-dark: white;
+  }
+}
+
+@media (max-width: 750px) {
+  :root {
+    --full-width-main: 100%;
+    --full-width-aside: 0;
+  }
+  .about {
+    display: inherit;
+    margin: auto;
+  }
+  .about-me {
+    padding: 0 15px;
+    margin-top: 15px;
+  }
+  .content-portafolio aside {
+    /*display: none;
+    margin-left: -150px;*/
+    width: 0px;
+    transition: all 0.8s;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  .btn-menu {
+    display: unset;
+  }
+}

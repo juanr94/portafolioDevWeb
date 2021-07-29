@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="./styles.css">-->
+    <style>
+        .btn-menu div{
+            background-color: blue;
+            width: 50px;
+            height: 10px;
+            content: "";
+            margin: 4px 0;
+            border-radius: 5px;
+        }
+        
+        .btn-cross div{
+            background-color: red;
+            position: absolute;
+            margin: 0;
+            display: none;
+        }
+        .btn-cross div:nth-child(1){
+            transform: rotate(45deg);
+        }
+        .btn-cross div:nth-child(2){
+            transform: rotate(-45deg);
+        }
+
+        .color-cross{
+            background-color: red;
+            display:inherit;
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <h3>Portafolio</h3>
+        <div class="btn-menu" id="btnMenu">
+            <div></div>
+            <div class="btn-cross" id="btnCross">
+                <div class="color-cross"></div>
+                <div class="color-cross"></div>
+            </div>
+            <div></div>
+        </div>
+    </nav>
+    <main>
+        <aside></aside>
+        <section></section>
+    </main>
+    <script>
+        const btn = document.getElementById('btnMenu');
+        const btnCross = document.querySelectorAll('.btn-cross div');
+        const btnBar = document.querySelectorAll('.btn-menu div');
+        var estado = 0;
+
+        btn.addEventListener('click',() => {
+            if(estado === 0){
+                btnBar.forEach(element => {
+                    element.style.backgroundColor = 'Transparent';
+                });
+                btnCross[1].className += ' color-cross';
+                btnCross[2].className += ' color-cross';
+                
+
+                estado = 1;
+            }else if (estado === 1){
+                btnBar.forEach(element => {
+                    element.style.backgroundColor = 'Blue';
+                });
+                btnCross[1].className = 'btn-cross';
+                btnCross[2].className = 'btn-cross';
+                
+                estado = 0;
+            }
+        }); 
+
+    </script>
+</body>
+</html>

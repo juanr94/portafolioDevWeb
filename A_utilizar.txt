@@ -1,0 +1,5 @@
+para modificar una variable CSS global lo único que tenemos que hacer es algo como esto:
+>> document.documentElement.style.setProperty('--nombreVariable', 'valor');
+Las variables globales CSS se definen para todo el documento, es decir para el elemento raíz 
+de la página, es decir, el elemento <html>, y en JavaScript obtenemos una referencia al mismo 
+a través de la propiedad documentElement del documento, como en este fragmento.

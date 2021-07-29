@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>DevWeb Portafolio JuanR</title>
+</head>
+<body>
+    <nav class="bar-menu">
+        <h1>Portafolio</h1>
+        <div class="content-btn-menu">
+            <div class="btn-menu" id="btnMenu">
+                <label for="check">
+                    <input type="checkbox" id="check">
+                    <div></div>
+                    <div class="cross-btn">
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div></div>
+                </label>
+            </div>
+        </div>
+    </nav>
+    <div class="content-portafolio">
+        <aside>
+            <div class="option-portafolio">
+                <ul>
+                    <li><a id="liBar" href="#home">HOME</a></li>
+                    <li><a id="liBar" href="#about">ABOUT</a></li>
+                    <li><a id="liBar" href="#services">SERVICES</a></li>
+                    <li><a id="liBar" href="#proyect">PROJECT</a></li>
+                    <li><a id="liBar" href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </aside>
+        <main>
+            <div class="home" id="home">
+                <div class="portada"></div>
+                <div class="content-img-poratfolio">
+                    <img src="./img/foto_ejemplo.jpg" alt="" class="img-portafolio">
+                </div>
+                <h2>JUAN MORENO</h2>
+                <p>Soy desarollador Jr</p>
+                <input type="button" value="Descargar mi CV" class="btn-cv">
+                <div class="social-media">
+                    <a href="https://www.facebook.com/"><img src="./img/facebook_b.svg" alt=""></a>                <a href=""><img src="./img/Twitter_b.svg" alt="">
+                    <a href=""><img src="./img/whatsapp_b.svg" alt=""></a>
+                    <a href=""><img src="./img/telegrama_b.svg" alt=""></a> 
+                </div>
+            </div>
+            <div id="about" class="about">
+                <div class="about-description">
+                    <h3>About me</h3>
+                    <div class="divisor"></div>
+                    <p>Honest, responsible, ease to communicate, committed to work, I face all kinds of
+                        situations regardless of the level of difficulty, I share knowledge, I accept criticisms
+                        and suggestions that improve my performance, as well as, teamwork, I turn to the
+                        others with respect, kindness and humility.
+                    </p>
+                    <div>
+                        <p>Programming skill</p>
+                        <div>
+                            <p>HTML5</p>
+                            <div class="progress-bar">
+                                <div></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>HTML5</p>
+                            <div class="progress-bar">
+                                <div></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>HTML5</p>
+                            <div class="progress-bar">
+                                <div></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>HTML5</p>
+                            <div class="progress-bar">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="lenguaje-dev">
+
+                </div>  
+            </div>
+            <div class="services" id="services">
+                <h3>Services</h3>
+                <div class="divisor"></div>
+                <div class="card-services">
+                    <article class="card">
+                        <img src="./img/Dev_web_b.svg" alt="">
+                        <h3>WEB DEVELOPMENT</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, sed repudiandae? Perferendis molestiae quod doloremque eligendi consequatur. Voluptate fugiat, sapiente veniam delectus non corporis cupiditate, nesciunt eaque ab provident eum.</p>
+                    </article>
+                    <article class="card">
+                        <img src="./img/designner_web_b.svg" alt="">
+                        <h3>WEB DESIGN</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, sed repudiandae? Perferendis molestiae quod doloremque eligendi consequatur. Voluptate fugiat, sapiente veniam delectus non corporis cupiditate, nesciunt eaque ab provident eum.</p>
+                    </article>
+                    <article class="card">
+                        <img src="./img/database-storage_b.svg" alt="">
+                        <h3>DATABASE MANAGEMENT</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, sed repudiandae? Perferendis molestiae quod doloremque eligendi consequatur. Voluptate fugiat, sapiente veniam delectus non corporis cupiditate, nesciunt eaque ab provident eum.</p>
+                    </article>
+                    <article class="card">
+                        <img src="./img/android_b.svg" alt="">
+                        <h3>ANDROID APPS</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, sed repudiandae? Perferendis molestiae quod doloremque eligendi consequatur. Voluptate fugiat, sapiente veniam delectus non corporis cupiditate, nesciunt eaque ab provident eum.</p>
+                    </article>
+                </div>
+            </div>
+            <div class="contact" id="contact">
+                <h3>Contact me</h3>
+                <div class="divisor"></div>
+                <form action="" method="POST" class="form-contact">
+                    <label for="name">Name</label>
+                    <input type="text" placeholder="Name" id="name">
+                    <label for="email">E-Mail</label>
+                    <input type="email" placeholder="E-Mail" id="email">
+                    <label for="message">Message</label>
+                    <textarea name="" id="message" cols="100" rows="10" placeholder="Message"></textarea>
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+        </main>
+    </div>
+    
+    <script >
+        let position = 0;
+        let ticking = false;
+        const home = document.getElementById("about");
+        const about = document.getElementById("about");
+        const services = document.getElementById("services");
+        const proyect = document.getElementById("proyect");
+        const contact = document.getElementById("contact");
+        const liPanelLeft = document.querySelectorAll("li a#liBar");
+        /*Obtengo el ancho de pantalla cuando su valor es 750px (selesuma 17 porque es su valor restante de
+          la propiedad  <<document.body.offsetWidth>>)*/
+        
+
+       
+        function doSomething(){
+            colorLiPanleLeft(about,liPanelLeft[0]);            
+        }
+        document.addEventListener("scroll",() => {
+            if(!ticking){
+                window.requestAnimationFrame(() => {
+                    doSomething();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        function colorLiPanleLeft(element,li){
+            if(isElementTotallyVisible(element)){
+                li.style.color = "Red";
+            }else {
+                li.style.color = "Black";
+            }
+        }
+
+        function isElementTotallyVisible(element){
+            let anchoViewport = window.innerWidth || document.documentElement.clientWidth;
+            let alturaViewport = window.innerHeight || document.documentElement.clientHeight;
+
+            let elmt = element.getBoundingClientRect();
+            let elementDentroH = (elmt.left >= 0 && elmt.left <= anchoViewport) || 
+                                (elmt.right >= 0 && elmt.right <= anchoViewport);
+            let elementDentroV = (elmt.top >= (elmt.top / 2) && elmt.top <= alturaViewport) || 
+                                (elmt.bottom >= (elmt.bottom / 2) && elmt.bottom <= alturaViewport);
+            console.log('ElementTop '+elmt.top,'ElementBottom '+elmt.bottom,'AlturaVR '+alturaViewport,'AnchuraVR '+anchoViewport);
+            return (elementDentroH && elementDentroV);
+        }
+    </script>
+    <script>
+        let aside = document.getElementsByTagName('aside');
+        let body = document.getElementsByTagName("body");
+        let main = document.querySelector('main');
+        let btnMenu =  document.getElementById('check');
+        //let btnMenu =  document.getElementById('btnMenu');
+
+        let resizeScreenWindows = () => {
+            let ancho =  (document.body.offsetWidth + 17);
+            if(ancho >= 751){
+                //alert();
+                aside[0].style.width = "15%";
+            }else{
+                aside[0].style.width = "0%";
+            }
+        }
+
+        /*CUando se mueve el mouse en la pantalla*/
+        body[0].addEventListener('mousemove',(e) =>{
+            // Cuando el mouse esta moviendose en la parte izquierda de la pantalla
+            if(e.pageX < 50){
+                
+                asideShow();
+                btnMenu.checked = true;
+            }
+        });
+
+        /*Cuando el mosuse sale del elemeto*/
+        body[0].addEventListener('mouseleave',(e) =>{
+            asideHide();
+            btnMenu.checked = false;
+        });
+
+        window.addEventListener('resize', (event) => {
+            resizeScreenWindows();
+        });
+        
+        
+        
+        btnMenu.addEventListener('click', () => {
+            if(btnMenu.checked === true){
+                asideShow();
+            }else if(btnMenu.checked === false){
+                asideHide();
+            }
+            
+        });
+
+        const asideShow =  () =>{
+            let anchoVentana =  (document.body.offsetWidth + 17);
+            if(anchoVentana <= 750 ){
+                /*aside[0].style.marginLeft = "0px";
+                resizeScreenWindows('15%','85%');*/
+                aside[0].style.width = "150px";
+            }else if(anchoVentana >= 751 ){
+                aside[0].style.width = "15%";
+            }
+        }
+
+        const asideHide = (ancho) => {
+            let anchoVentana =  (document.body.offsetWidth + 17);
+            estado = 0;
+                if(anchoVentana <= 750 ){
+                    //aside[0].style.marginLeft = "-150px";
+                    aside[0].style.width = "0%";
+                }
+        }
+        
+
+    </script>
+</body>
+</html>
