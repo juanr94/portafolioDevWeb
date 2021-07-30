@@ -5,9 +5,11 @@
 }
 
 :root {
-  --background-color-white: white;
+  --background-color-light: white;
+  --bacground-color-frame: rgb(217, 217, 217); /*71*3*/
   --background-color-main: rgba(255, 255, 255, 0.466);
-  --background-color-dark: black;
+  --background-color-dark: rgb(45, 45, 45);
+  --color-font: black;
   --full-width: 100%;
   --full-width-aside: 15%;
   --full-width-main: calc(100% - var(--full-width-aside));
@@ -15,7 +17,9 @@
 }
 
 body {
-  background-color: var(--background-color-white);
+  background-color: var(--background-color-light);
+  color: var(--color-font);
+  transition: all 0.8s;
 }
 
 .content-portafolio {
@@ -29,7 +33,7 @@ body {
   display: flex;
   align-items: center;
   position: fixed;
-  background-color: white /*#a5a5a5*/;
+  background-color: var(--background-color-light) /*#a5a5a5*/;
   overflow: hidden;
   transition: all 0.8s;
 }
@@ -48,13 +52,13 @@ body {
 }
 
 .content-portafolio ul li a {
-  color: black;
+  color: var(--color-font);
   text-decoration: none;
 }
 
 /*Bar menu*/
 .bar-menu {
-  background-color: white /*rgb(217, 217, 217)*/;
+  background-color: var(--background-color-light) /*rgb(217, 217, 217)*/;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -63,11 +67,13 @@ body {
   position: fixed;
   width: var(--full-width-bar-menu);
   z-index: 999;
+  transition: all 0.8s;
 }
 
 /*Botón hamburger*/
 .btn-menu {
   cursor: pointer;
+  display: none;
 }
 
 .btn-menu div {
@@ -76,7 +82,7 @@ body {
   height: 4px;
   margin: 2px 0;
   border-radius: 2px;
-  background-color: black;
+  background-color: var(--background-color-dark);
 }
 
 .cross-btn div {
@@ -86,7 +92,20 @@ body {
 
 .content-btn-menu {
   padding-right: 20px;
+  display: flex;
+  align-items: center;
 }
+
+.btn-darkLight {
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+.btn-darkLight i {
+  color: rgb(254, 201, 7, 0.8);
+}
+
+/*=================== btn DarkLitght*/
 
 #check {
   display: none;
@@ -130,11 +149,12 @@ body {
 
 i {
   font-size: 25px;
-  color: black;
+  color: var(--background-color-dark);
   width: 25px;
+  transition: all 0.8s;
 }
 .social-media i {
-  background-color: rgb(217, 217, 217);
+  background-color: var(--bacground-color-frame);
   padding: 15px;
   margin: 0 8px;
   cursor: pointer;
@@ -144,12 +164,18 @@ i {
   padding: 50px 0;
 }
 
+.img-portafolio,
+aside,
+.bar-menu {
+  box-shadow: 0px 5px 50px 1px rgba(7, 7, 7, 0.2);
+}
+
 .img-portafolio {
   border-radius: 50%;
   width: 236px;
   height: 247px;
-  box-shadow: 0px 5px 50px 1px rgba(7, 7, 7, 0.2);
-  border: 3px solid white;
+  border: 3px solid var(--background-color-light);
+  transition: all 0.8s;
 }
 
 .portada {
@@ -228,8 +254,9 @@ h3,
   content: "";
   width: 250px;
   height: 8px;
-  background-color: rgb(217, 217, 217);
+  background-color: var(--bacground-color-frame);
   border-radius: 15px;
+  transition: all 0.8s;
 }
 .background-bar {
   content: "";
@@ -266,12 +293,12 @@ h3,
 }
 
 .contact {
-  padding: 25px 0;
+  padding: 50px 0;
 }
 
 .form-contact {
   width: 60%;
-  background-color: rgb(217, 217, 217);
+  background-color: var(--bacground-color-frame);
   margin: 25px auto;
   padding: 45px;
 }
@@ -324,7 +351,6 @@ h3,
     margin-left: -150px;*/
     width: 0px;
     transition: all 0.8s;
-    background-color: rgba(255, 255, 255, 0.5);
   }
   .btn-menu {
     display: unset;
