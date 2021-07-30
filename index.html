@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
     <title>DevWeb Portafolio JuanR</title>
 </head>
 <body>
@@ -46,9 +48,11 @@
                 <p>Soy desarollador Jr</p>
                 <input type="button" value="Descargar mi CV" class="btn-cv">
                 <div class="social-media">
-                    <a href="https://www.facebook.com/"><img src="./img/facebook_b.svg" alt=""></a>                <a href=""><img src="./img/Twitter_b.svg" alt="">
-                    <a href=""><img src="./img/whatsapp_b.svg" alt=""></a>
-                    <a href=""><img src="./img/telegrama_b.svg" alt=""></a> 
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>                
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-whatsapp"></i></a>
+                    <a href=""><i class="fab fa-telegram-plane"></i></a> 
+                    <a href=""><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div id="about" class="about">
@@ -60,32 +64,69 @@
                         and suggestions that improve my performance, as well as, teamwork, I turn to the
                         others with respect, kindness and humility.
                     </p>
-                    <div>
-                        <p>Programming skill</p>
+                    <div id="contentProgressBar">
+                        <p><strong>Programming skill</strong></p>
                         <div>
-                            <p>HTML5</p>
+                            <p><i class="fab fa-html5"></i>  HTML5</p>
                             <div class="progress-bar">
-                                <div></div>
+                                <div class="background-bar"></div>
                             </div>
                         </div>
                         <div>
-                            <p>HTML5</p>
+                            <p><i class="fab fa-node-js"></i> NodeJs</p>
                             <div class="progress-bar">
-                                <div></div>
+                                <div class="background-bar"></div>
                             </div>
                         </div>
                         <div>
-                            <p>HTML5</p>
+                            <p><i class="fab fa-java"></i> Java</p>
                             <div class="progress-bar">
-                                <div></div>
+                                <div class="background-bar"></div>
                             </div>
                         </div>
                         <div>
-                            <p>HTML5</p>
+                            <p> C#</p>
                             <div class="progress-bar">
-                                <div></div>
+                                <div class="background-bar"></div>
                             </div>
                         </div>
+                        <div>
+                            <p><i class="fab fa-python"></i> Python</p>
+                            <div class="progress-bar">
+                                <div class="background-bar"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p><i class="fab fa-php"></i> PHP</p>
+                            <div class="progress-bar">
+                                <div class="background-bar"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p><i class="fab fa-android"></i> Android(Kotlin)</p>
+                            <div class="progress-bar">
+                                <div class="background-bar"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p><i class="fas fa-database"></i> SQL server</p>
+                            <div class="progress-bar">
+                                <div class="background-bar"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p><i class="fas fa-database"></i> MySQL Server</p>
+                            <div class="progress-bar">
+                                <div class="background-bar"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <p><i class="fas fa-database"></i> SQLite</p>
+                            <div class="progress-bar">
+                                <div class="background-bar"></div>
+                            </div>
+                        </div>
+                        
                     </div>
 
                 </div>
@@ -144,12 +185,13 @@
         const proyect = document.getElementById("proyect");
         const contact = document.getElementById("contact");
         const liPanelLeft = document.querySelectorAll("li a#liBar");
+        const backgroundBar = document.querySelectorAll(".background-bar");
         /*Obtengo el ancho de pantalla cuando su valor es 750px (selesuma 17 porque es su valor restante de
           la propiedad  <<document.body.offsetWidth>>)*/
         
-
+    
        
-        function doSomething(){
+        const doSomething = () => {
             colorLiPanleLeft(about,liPanelLeft[0]);            
         }
         document.addEventListener("scroll",() => {
@@ -162,7 +204,21 @@
             }
         });
 
-        function colorLiPanleLeft(element,li){
+        const addClassBar = () => {
+            for(let i = 0; i < backgroundBar.length; i++){
+                backgroundBar[i].style.width = '85%';
+                if(i > 3 && i <= 5){
+                    backgroundBar[i].style.width = '65%';
+                }else if(i == 6){
+                    backgroundBar[i].style.width = '35%';
+                }
+            }
+            console.log("Whid"+backgroundBar[1].style.width);
+        }
+
+        addClassBar();
+
+        const colorLiPanleLeft = (element,li) => {
             if(isElementTotallyVisible(element)){
                 li.style.color = "Red";
             }else {
@@ -170,7 +226,7 @@
             }
         }
 
-        function isElementTotallyVisible(element){
+        const isElementTotallyVisible = (element) => {
             let anchoViewport = window.innerWidth || document.documentElement.clientWidth;
             let alturaViewport = window.innerHeight || document.documentElement.clientHeight;
 

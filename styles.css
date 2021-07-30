@@ -128,9 +128,13 @@ body {
   margin: 25px 0;
 }
 
-.social-media img {
+i {
+  font-size: 25px;
+  color: black;
   width: 25px;
-  background-color: rgba(128, 128, 128, 0.349);
+}
+.social-media i {
+  background-color: rgb(217, 217, 217);
   padding: 15px;
   margin: 0 8px;
   cursor: pointer;
@@ -173,6 +177,16 @@ body {
 
 .btn-cv {
   background-color: rgb(254, 201, 7);
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  padding: 7px 10px;
+  margin: 15px 0;
+  color: black;
+}
+
+.btn-cv:hover {
+  background-color: rgb(254, 201, 7, 0.8);
 }
 
 /*========================================== about =======================================*/
@@ -210,14 +224,14 @@ h3,
 }
 
 .progress-bar,
-.progress-bar div {
+.background-bar {
   content: "";
   width: 250px;
   height: 8px;
-  background-color: rgba(254, 200, 7, 0.349);
+  background-color: rgb(217, 217, 217);
   border-radius: 15px;
 }
-.progress-bar div::after {
+.background-bar {
   content: "";
   background-color: rgb(254, 201, 7);
   width: 85%;
@@ -255,13 +269,9 @@ h3,
   padding: 25px 0;
 }
 
-.contact form {
-  color: white;
-}
-
 .form-contact {
   width: 60%;
-  background-color: gray;
+  background-color: rgb(217, 217, 217);
   margin: 25px auto;
   padding: 45px;
 }
