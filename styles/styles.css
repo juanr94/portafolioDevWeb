@@ -3,7 +3,9 @@
   padding: 0;
   outline: none;
 }
-
+#Capa_1 {
+  background-color: red;
+}
 :root {
   --background-color-light: white;
   --bacground-color-frame: rgb(217, 217, 217); /*71*3*/
@@ -183,7 +185,7 @@ aside,
   content: "";
   height: 200px;
   position: absolute;
-  background-image: url("./img/portada.webp");
+  background-image: url("../img/portada.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

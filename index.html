@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <title>DevWeb Portafolio JuanR</title>
@@ -52,11 +52,11 @@
                 <p>Soy desarollador Jr</p>
                 <input type="button" value="Descargar mi CV" class="btn-cv">
                 <div class="social-media">
-                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>                
-                    <a href=""><i class="fab fa-instagram"></i></a>
-                    <a href=""><i class="fab fa-whatsapp"></i></a>
-                    <a href=""><i class="fab fa-telegram-plane"></i></a> 
-                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>                
+                    <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="" target="_blank"><i class="fab fa-telegram-plane"></i></a> 
+                    <a href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             <div id="about" class="about">
@@ -246,96 +246,6 @@
             return (elementDentroH && elementDentroV);
         }
     </script>-->
-    <script>
-        let aside = document.getElementsByTagName('aside');
-        let body = document.getElementsByTagName("body");
-        let main = document.querySelector('main');
-        let btnMenu =  document.getElementById('check');
-        let btnDarkLight = document.getElementById('btnDarkLight');
-        let btnDarkLightI = document.getElementsByTagName('i');
-        //let btnMenu =  document.getElementById('btnMenu');
-
-        let modeLightDark = true;
-        btnDarkLight.addEventListener('click',() =>{
-            if(modeLightDark){
-                document.documentElement.style.setProperty('--background-color-light','rgb(45, 45, 45)');
-                document.documentElement.style.setProperty('--background-color-dark','white');
-                document.documentElement.style.setProperty('--color-font','white'); 
-                document.documentElement.style.setProperty('--bacground-color-frame','rgba(71,71,71)');
-                btnDarkLightI[0].style.color = 'white';
-                modeLightDark = false;
-            }else{
-                document.documentElement.style.setProperty('--background-color-light','white');
-                document.documentElement.style.setProperty('--background-color-dark','rgb(45, 45, 45)');
-                document.documentElement.style.setProperty('--color-font','black');
-                document.documentElement.style.setProperty('--bacground-color-frame','rgba(217,217,217)');
-                btnDarkLightI[0].style.color = 'rgb(254, 201, 7, 0.8)';
-                modeLightDark = true;
-            }
-        });
-
-        let resizeScreenWindows = () => {
-            let ancho =  (document.body.offsetWidth + 17);
-            if(ancho >= 751){
-                //alert();
-                aside[0].style.width = "15%";
-            }else{
-                aside[0].style.width = "0%";
-            }
-        }
-
-        /*CUando se mueve el mouse en la pantalla*/
-        body[0].addEventListener('mousemove',(e) =>{
-            // Cuando el mouse esta moviendose en la parte izquierda de la pantalla
-            if(e.pageX < 50){
-                
-                asideShow();
-                btnMenu.checked = true;
-            }
-        });
-
-        /*Cuando el mosuse sale del elemeto*/
-        body[0].addEventListener('mouseleave',(e) =>{
-            asideHide();
-            btnMenu.checked = false;
-        });
-
-        window.addEventListener('resize', (event) => {
-            resizeScreenWindows();
-        });
-        
-        
-        
-        btnMenu.addEventListener('click', () => {
-            if(btnMenu.checked === true){
-                asideShow();
-            }else if(btnMenu.checked === false){
-                asideHide();
-            }
-            
-        });
-
-        const asideShow =  () =>{
-            let anchoVentana =  (document.body.offsetWidth + 17);
-            if(anchoVentana <= 750 ){
-                /*aside[0].style.marginLeft = "0px";
-                resizeScreenWindows('15%','85%');*/
-                aside[0].style.width = "150px";
-            }else if(anchoVentana >= 751 ){
-                aside[0].style.width = "15%";
-            }
-        }
-
-        const asideHide = (ancho) => {
-            let anchoVentana =  (document.body.offsetWidth + 17);
-            estado = 0;
-                if(anchoVentana <= 750 ){
-                    //aside[0].style.marginLeft = "-150px";
-                    aside[0].style.width = "0%";
-                }
-        }
-        
-
-    </script>
+    <script src="js/js.js"></script>
 </body>
 </html>
